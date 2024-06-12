@@ -12,7 +12,7 @@ int main()
 	bool billion_thresold = false;
 
 
-	for (int sq = 0; sq < 64; ++sq) {
+	for (int sq = 0; sq < 63; ++sq) {
 
 		square_rice *= 2;
 		total_rice = square_rice + total_rice;

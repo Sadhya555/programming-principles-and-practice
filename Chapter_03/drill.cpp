@@ -16,20 +16,13 @@ int main()
             std::cout << "Enter the second value\n";
             std::cin >> b;
             if (a < b) {
-                if (a - smallest <= 0) {
-                    a == smallest;
+                if (a - smallest < 0) {
+                    smallest == a;
                     std::cout << smallest << " is the smallest value so far\n";
                     continue;
                 }
                 else {
                     std::cout << "The smaller value is " << a << "\n";
-                }
-                if (largest - b) {
-                    largest = b;
-                    std::cout << largest << " is the largest value so far\n";
-                }
-                else {
-                    std::cout << "The larger value is " << b << "\n";
                 }
                 if (b - a < 0.01) {
                     std::cout << "The numbers are almost equal\n";

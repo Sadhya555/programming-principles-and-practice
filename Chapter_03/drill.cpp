@@ -16,10 +16,9 @@ int main()
             std::cout << "Enter the second value\n";
             std::cin >> b;
             if (a < b) {
-                if (a - smallest < 0) {
-                    smallest == a;
-                    std::cout << smallest << " is the smallest value so far\n";
-                    continue;
+                if (a < smallest) {
+                    smallest = a;
+                    std::cout << a << " is the smallest value so far\n";
                 }
                 else {
                     std::cout << "The smaller value is " << a << "\n";

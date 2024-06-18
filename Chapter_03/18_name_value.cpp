@@ -16,14 +16,20 @@ int main()
             break;
         }
         else {
-            names.push_back(name);
-            scores.push_back(value);
+            bool duplicate = false;
             for (std::string n : names) {
-                for (int s : scores) {
-                    if (name == n && value == s) {
-                        break;
-                    }
+                if (name == n) {
+                    duplicate = true;
+                    break;
                 }
+            }
+            if (duplicate) {
+                std::cout << "ERROR! Name is already given\n";
+                return 1;
+            }
+            else {
+                names.push_back(name);
+                scores.push_back(value);
             }
         }
     }

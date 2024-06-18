@@ -2,42 +2,41 @@
 
 int main()
 {
-    double a;
-    double b;
-    double smallest = 0;
-    double largest = 0;
+    double value;
+    double smallest;
+    double largest;
     char input;
+    bool first_input = true;
+    std::string unit;
     char terminator = '|';
 
-    std::cout << "Enter the first value (or input | to quit)\n";
+    const double cm_m = 0.01;
+    const double in_cm = 2.54;
+    const double ft_in = 12;
+
+    std::cout << "Enter a value with a unit (cm, m, in, ft) (or input | to quit):\n";
 
     while (true) {
-        if (std::cin >> a) {
-            std::cout << "Enter the second value\n";
-            std::cin >> b;
-            if (a < b) {
-                if (a < smallest) {
-                    smallest = a;
-                    std::cout << a << " is the smallest value so far\n";
-                }
-                else {
-                    std::cout << "The smaller value is " << a << "\n";
-                }
-                if (b - a < 0.01) {
-                    std::cout << "The numbers are almost equal\n";
-                }
+        if (std::cin >> value >> unit) {
+            if (first_input) {
+                smallest = value;
+                largest = value;
+                first_input = false;
             }
-            else if (a > b) {
-                std::cout << "The smaller value is: " << b << "\nThe larger value is: " << a << "\n";
-                if (a - b < 0.01) {
-                    std::cout << "The numbers are almost equal\n";
-                }
-            }
-            else {
-                std::cout << "The numbers are equal\n";
-            }
-        }
 
+            std::cout << "You entered: " << value << " " << unit;
+
+            if (value < smallest) {
+                smallest = value;
+                std::cout << " (smallest so far)";
+            }
+            if (value > largest) {
+                largest = value;
+                std::cout << " (largest so far)";
+            }
+
+            std::cout << "\n";
+        }
         else {
             std::cin.clear();
             std::cin >> input;
@@ -46,9 +45,8 @@ int main()
                 break;
             }
             else {
-                std::cout << "Invalid input. Enter two integers (or input | to quit)\n";
+                std::cout << "Invalid input. Enter a value with a unit (or input | to quit)\n";
             }
         }
     }
-
 }

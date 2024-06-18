@@ -44,7 +44,9 @@ int main()
     while (true) {
         std::cout << "Name: ";
         std::cin >> name;
-        if (name == "exit") break;
+        if (name == "exit") {
+            break;
+        }
         bool found = false;
         for (int i = 0; i < names.size(); ++i) {
             if (names[i] == name) {

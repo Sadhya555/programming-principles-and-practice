@@ -4,8 +4,6 @@
 
 int main()
 {
-    
-    int value;
     int input;
     std::vector<int>numbers;
 

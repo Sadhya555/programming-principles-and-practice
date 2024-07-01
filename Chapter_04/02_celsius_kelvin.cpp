@@ -9,5 +9,5 @@ int main() {
     double c = 0;               // declare input variable
     std::cin >> c;      // c instead of d              // retrive temperature to input variable
     double k = ctok(c); // no quotation around c         // convert temperature
-    std::cout << k << '/n'; // shouldn't be Cout     // print out temperature
+    std::cout << k << '\n'; // shouldn't be Cout & newline character is \     // print out temperature
 }

@@ -16,7 +16,6 @@ void roots(double a, double b, double c) {
 	else {
 		std::cout << "No real roots exist\n";
 	}
-	return 0;
 }
 
 int main() {

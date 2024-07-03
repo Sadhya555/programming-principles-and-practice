@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 void error(std::string errortext) {
     std::cerr << errortext << '\n';

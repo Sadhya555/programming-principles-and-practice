@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 int single_digit(std::string num_string)

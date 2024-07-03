@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // this only works for single words
 

@@ -1,4 +1,10 @@
 #include <iostream>
+#include <cmath>
+#include <string>
+
+void error(std::string errortext) {
+	std::cerr << errortext << '\n';
+}
 
 void roots(double a, double b, double c) {
 	double discriminant = (b * b) - (4 * a * c);
@@ -14,7 +20,7 @@ void roots(double a, double b, double c) {
 		std::cout << result1;
 	}
 	else {
-		std::cout << "No real roots exist\n";
+		error("No real roots exist");
 	}
 }
 

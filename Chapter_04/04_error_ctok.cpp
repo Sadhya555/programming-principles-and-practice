@@ -5,11 +5,11 @@ void error(std::string errortext) {
 }
 
 double ctok(double c) {
-    double k = c + 273.25;
-    if (k < 0) {
+    if (c < -273.15) {
         error("Invalid temperature!");
         return -1;
-    } else
+    }
+    double k = c + 273.15;
     return k;
 }
 
@@ -17,5 +17,10 @@ int main() {
     double c = 0;
     std::cin >> c;
     double k = ctok(c);
-    std::cout << k << '\n';
+    if (k != -1) {
+        std::cout << k << '\n';
+    }
+    else {
+        std::cout << "Failed to convert temperature\n";
+    }
 }
